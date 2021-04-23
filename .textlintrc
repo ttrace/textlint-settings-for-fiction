@@ -1,0 +1,25 @@
+{
+    "rules": {
+        "@textlint-ja/morpheme-match": {
+            "dictionaryPathList": ["dict/dict.js"] 
+        },
+        "prh": {
+            "rulePaths" :["dict/prh-rule.yml" , "dict/prh-local-rule.yml"]
+        },
+        "preset-jtf-style": {
+            "1.1.1.本文": false,
+            "2.1.9.アルファベット": false,
+            "4.2.9.ダッシュ(-)": false,
+            "2.1.8.算用数字": false,
+            "2.2.2.算用数字と漢数字の使い分け": false
+        },
+        "@textlint-ja/textlint-rule-no-synonyms": {
+            "allows": [
+                "ハロワ","ハローワーク",
+                "だし","出し",
+                "コロナ","コロナウイルス",
+                "ネット","ネットワーク"
+                ]
+        }
+    }
+}
