@@ -1,0 +1,21 @@
+{
+  "name": "textlint-settings",
+  "version": "0.0.1",
+  "description": "テキストリントの設定",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "keywords": [
+    "novel"
+  ],
+  "author": "Taiyo Fujii",
+  "license": "MIT",
+  "devDependencies": {
+    "@textlint-ja/textlint-rule-morpheme-match": "^1.0.2",
+    "@textlint-ja/textlint-rule-no-synonyms": "^1.1.0",
+    "textlint": "^11.9.0",
+    "textlint-rule-preset-jtf-style": "^2.3.8",
+    "textlint-rule-prh": "^5.3.0"
+  }
+}

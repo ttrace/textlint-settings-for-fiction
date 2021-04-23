@@ -1,10 +1,10 @@
 {
     "rules": {
         "@textlint-ja/morpheme-match": {
-            "dictionaryPathList": ["dict/dict.js"] 
+            "dictionaryPathList": ["/Users/taiyo_ef/Documents/仕事その他/Tools/textlint/dict/morpheme-match-dict.js"] 
         },
         "prh": {
-            "rulePaths" :["dict/prh-rule.yml" , "dict/prh-local-rule.yml"]
+            "rulePaths" :["/Users/taiyo_ef/Documents/仕事その他/Tools/textlint/dict/prh-rule.yml"]
         },
         "preset-jtf-style": {
             "1.1.1.本文": false,
