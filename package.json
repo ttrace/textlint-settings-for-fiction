@@ -1,6 +1,6 @@
 {
   "name": "textlint-settings",
-  "version": "0.0.1",
+  "version": "0.1.1",
   "description": "テキストリントの設定",
   "repository": {
     "type": "git",

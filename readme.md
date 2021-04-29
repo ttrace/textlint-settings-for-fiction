@@ -3,3 +3,5 @@ textlintの設定全般。
 
 - @textlint-ja/morpheme-match
 - textlint-rule-prh
+
+textlintと同じバージョンのkuromojiで辞書のテストを実施。
