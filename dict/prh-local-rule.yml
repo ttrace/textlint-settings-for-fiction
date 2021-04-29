@@ -1,0 +1,6 @@
+# prh version
+version: 1
+rules:
+
+  - expected: サーバー
+    pattern: /サーバ(?!ー)/

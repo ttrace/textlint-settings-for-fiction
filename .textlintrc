@@ -4,7 +4,10 @@
             "dictionaryPathList": ["/Users/taiyo_ef/Documents/仕事その他/Tools/textlint/dict/morpheme-match-dict.js"] 
         },
         "prh": {
-            "rulePaths" :["/Users/taiyo_ef/Documents/仕事その他/Tools/textlint/dict/prh-rule.yml"]
+            "rulePaths" :[
+                "/Users/taiyo_ef/Documents/仕事その他/Tools/textlint/dict/prh-rule.yml",
+                "dict/prh-local-rule.yml"
+                ]
         },
         "preset-jtf-style": {
             "1.1.1.本文": false,

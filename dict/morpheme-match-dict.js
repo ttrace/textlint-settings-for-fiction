@@ -20,25 +20,7 @@ module.exports = [
         ]
     },
     {
-        message: `「$1$2$3」には助詞の連続があります（係助詞と格助詞の連続）`,
-        expected: '$1$2',
-        tokens: [
-            {
-                "pos": "名詞",
-                "_capture": "$1"
-            },{
-                "pos": "助詞",
-                "pos_detail_1": "係助詞",
-                "_capture": "$2"
-            },{
-                "pos": "助詞",
-                "pos_detail_1": "格助詞",
-                "_capture": "$3"
-            }
-        ]
-    },
-    {
-        message: `「$1$2$3」には助詞の連続があります（係助詞と格助詞の連続）`,
+        message: `「$1$2$3」には助詞の連続があります（格助詞と係助詞の連続）`,
         expected: '$1$2',
         tokens: [
             {
@@ -50,6 +32,86 @@ module.exports = [
                 "pos_detail_1": "格助詞",
                 "_capture": "$2"
             },{
+                "pos": "助詞",
+                "pos_detail_1": "係助詞",
+                "_capture": "$3"
+            }
+        ]
+    },
+    {
+        message: `「$1$2$3」には助詞の連続があります（格助詞から係助詞への連続）`,
+        expected: '$1$2',
+        tokens: [
+            {
+                "pos": "名詞",
+                "_capture": "$1"
+            },{
+                "surface_form": "を",
+                "pos": "助詞",
+                "pos_detail_1": "格助詞",
+                "_capture": "$2"
+            },{
+                "surface_form": "は",
+                "pos": "助詞",
+                "pos_detail_1": "係助詞",
+                "_capture": "$3"
+            }
+        ]
+    },    
+    {
+        message: `「$1$2$3」には助詞の連続があります（格助詞から係助詞への連続）`,
+        expected: '$1$2',
+        tokens: [
+            {
+                "pos": "名詞",
+                "_capture": "$1"
+            },{
+                "surface_form": "を",
+                "pos": "助詞",
+                "pos_detail_1": "格助詞",
+                "_capture": "$2"
+            },{
+                "surface_form": "でも",
+                "pos": "助詞",
+                "pos_detail_1": "係助詞",
+                "_capture": "$3"
+            }
+        ]
+    },
+    {
+        message: `「$1$2$3」には助詞の連続があります（格助詞から係助詞への連続）`,
+        expected: '$1$2',
+        tokens: [
+            {
+                "pos": "名詞",
+                "_capture": "$1"
+            },{
+                "surface_form": "を",
+                "pos": "助詞",
+                "pos_detail_1": "格助詞",
+                "_capture": "$2"
+            },{
+                "surface_form": "しか",
+                "pos": "助詞",
+                "pos_detail_1": "係助詞",
+                "_capture": "$3"
+            }
+        ]
+    },
+    {
+        message: `「$1$2$3」には助詞の連続があります（格助詞から係助詞への連続）`,
+        expected: '$1$2',
+        tokens: [
+            {
+                "pos": "名詞",
+                "_capture": "$1"
+            },{
+                "surface_form": "を",
+                "pos": "助詞",
+                "pos_detail_1": "格助詞",
+                "_capture": "$2"
+            },{
+                "surface_form": "さえ",
                 "pos": "助詞",
                 "pos_detail_1": "係助詞",
                 "_capture": "$3"
@@ -72,25 +134,6 @@ module.exports = [
         ]
     },
     {
-        message: `「$1$2$3」には助詞の連続があります（係助詞と格助詞の連続）`,
-        expected: '$1$2',
-        tokens: [
-            {
-                "pos": "名詞",
-                "_capture": "$1"
-            },{
-                "surface_form": "を",
-                "pos": "助詞",
-                "pos_detail_1": "格助詞",
-                "_capture": "$2"
-            },{
-                "pos": "助詞",
-                "pos_detail_1": "係助詞",
-                "_capture": "$3"
-            }
-        ]
-    },
-    {
         message: `「$1$2$3」には助詞の連続があります（格助詞と格助詞の連続）`,
         //組織票にに支えられて
         expected: '$1$2',
@@ -104,6 +147,26 @@ module.exports = [
             },{
                 "pos": "助詞",
                 "pos_detail_1": "格助詞",
+                "_capture": "$3"
+            }
+        ]
+    },
+    {
+        message: `「$1$2$3」には助詞の連続があります（格助詞と格助詞の連続）`,
+        //海発のの発言
+        expected: '$1$2',
+        tokens: [
+            {
+                "_capture": "$1"
+            },{
+                "surface_form": 'の',
+                "pos": "助詞",
+                "pos_detail_1": "連体化",
+                "_capture": "$2"
+            },{
+                "surface_form": 'の',
+                "pos": "助詞",
+                "pos_detail_1": "連体化",
                 "_capture": "$3"
             }
         ]
@@ -148,6 +211,7 @@ module.exports = [
             }
         ]
     },
+                    
     {
         message: `「$1よりの」には不自然な助詞の連続があります`,
         //新型コロナウイルスのためにの
