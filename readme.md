@@ -1,5 +1,2 @@
-textlintの設定全般。
-管理しているのは以下の二つ。
-
-- @textlint-ja/morpheme-match
-- textlint-rule-prh
+小説を書くために使っているtextlintの設定と辞書を公開しています。
+textlintと同じバージョンのkuromojiで辞書のテストを実施。
