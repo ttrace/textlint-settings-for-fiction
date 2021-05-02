@@ -1,13 +1,13 @@
 {
   "name": "textlint-settings",
   "version": "0.1.1",
-  "description": "テキストリントの設定",
+  "description": "textlintの設定",
   "repository": {
     "type": "git",
     "url": ""
   },
   "keywords": [
-    "novel"
+    "novel","writing"
   ],
   "author": "Taiyo Fujii",
   "license": "MIT",

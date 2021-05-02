@@ -56,7 +56,7 @@ rules:
   - expected: いえ
     pattern: /(?=は)言え/
   - expected: いわ
-    pattern: 言わ
+    pattern: /(?<!有無を)言わ/
   - expected: すが$1
     pattern: /縋([らりるれろ])/
 
