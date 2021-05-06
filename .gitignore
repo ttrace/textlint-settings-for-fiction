@@ -1,4 +1,4 @@
 node_modules/
 out/
 test/mytext.txt
-./out.txt
+out.txt
