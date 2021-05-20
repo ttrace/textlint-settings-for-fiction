@@ -143,10 +143,12 @@ module.exports = [
             },{
                 "pos": "助詞",
                 "pos_detail_1": "格助詞",
+                "pos_detail_2": "一般",
                 "_capture": "$2"
             },{
                 "pos": "助詞",
                 "pos_detail_1": "格助詞",
+                "pos_detail_2": "一般",
                 "_capture": "$3"
             }
         ]
@@ -173,7 +175,7 @@ module.exports = [
     },
     {
         message: `「$1をの」には不自然な助詞の連続があります`,
-        //新型コロナウイルスのためにの
+        //新型コロナウイルスのためをの
         expected: '$1$をの',
         tokens: [
             {
@@ -214,7 +216,7 @@ module.exports = [
                     
     {
         message: `「$1よりの」には不自然な助詞の連続があります`,
-        //新型コロナウイルスのためにの
+        //新型コロナウイルスのためよりの
         expected: '$1$よりの',
         tokens: [
             {

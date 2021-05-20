@@ -1,7 +1,7 @@
 {
     "rules": {
         "@textlint-ja/morpheme-match": {
-            "dictionaryPathList": ["dict/morpheme-match-dict.js"] 
+            "dictionaryPathList": ["dict/morpheme-match-dict.js"]
         },
         "prh": {
             "rulePaths" :[
