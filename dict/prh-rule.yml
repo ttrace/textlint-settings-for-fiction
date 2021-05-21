@@ -63,7 +63,10 @@ rules:
   # 登録商標
   - expected: 宅配便
     pattern: 宅急便
-    prh: 宅急便はヤマト運輸の商標です
+    prh: 宅急便はヤマト運輸の登録商標です
+  - expected: 面ファスナー
+    pattern: マジックテープ
+    prh: マジックテープはクラレの登録商標です
 
   #誤字
   - expected: かぶりを振
@@ -74,4 +77,7 @@ rules:
     prh: 誤変換の可能性があります
   - expected: 口をきく
     pattern: 口を聞く
+    prh: 誤変換の可能性があります
+  - expected: なかった
+    pattern: な買った
     prh: 誤変換の可能性があります
