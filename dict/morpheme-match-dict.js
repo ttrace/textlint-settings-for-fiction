@@ -1,12 +1,11 @@
 module.exports = [
-    // https://azu.github.io/morpheme-match/
     // ルール　助詞の連続（タイプミス）
     {
-        message: `「$1$2$3」には助詞の連続があります（単純な助詞の連続）`,
+        message: `「$1$2$3」には助詞の連続があります（係助詞の連続） err 1`,
+        //名詞はは連続しない。
         expected: '$1$2',
         tokens: [
             {
-                "pos": "名詞",
                 "_capture": "$1"
             },{
                 "pos": "助詞",
@@ -20,11 +19,11 @@ module.exports = [
         ]
     },
     {
-        message: `「$1$2$3」には助詞の連続があります（格助詞と係助詞の連続）`,
+        message: `「$1$2$3」には助詞の連続があります（格助詞と係助詞の連続） err2`,
+        //名詞がは使える。
         expected: '$1$2',
         tokens: [
             {
-                "pos": "名詞",
                 "_capture": "$1"
             },{
                 "surface_form": "が",
@@ -39,11 +38,11 @@ module.exports = [
         ]
     },
     {
-        message: `「$1$2$3」には助詞の連続があります（格助詞から係助詞への連続）`,
+        message: `「$1$2$3」には助詞の連続があります（格助詞から係助詞への連続） err3`,
+        //名詞をは使う。
         expected: '$1$2',
         tokens: [
             {
-                "pos": "名詞",
                 "_capture": "$1"
             },{
                 "surface_form": "を",
@@ -57,15 +56,13 @@ module.exports = [
                 "_capture": "$3"
             }
         ]
-    },    
+    },
     {
-        message: `「$1$2$3」には助詞の連続があります（格助詞から係助詞への連続）`,
-        expected: '$1$2',
+        message: `「$2」と「$3」の助詞の連続があります（格助詞から副助詞への連続） err4`,
+        //名詞をでも使う。
+        expected: '$2',
         tokens: [
             {
-                "pos": "名詞",
-                "_capture": "$1"
-            },{
                 "surface_form": "を",
                 "pos": "助詞",
                 "pos_detail_1": "格助詞",
@@ -73,19 +70,17 @@ module.exports = [
             },{
                 "surface_form": "でも",
                 "pos": "助詞",
-                "pos_detail_1": "係助詞",
+                "pos_detail_1": "副助詞",
                 "_capture": "$3"
             }
         ]
     },
     {
-        message: `「$1$2$3」には助詞の連続があります（格助詞から係助詞への連続）`,
-        expected: '$1$2',
+        message: `「$2」と「$3」という助詞の連続があります（格助詞から係助詞への連続）err5` ,
+        //名詞をしか考えられない。
+        expected: '$2',
         tokens: [
             {
-                "pos": "名詞",
-                "_capture": "$1"
-            },{
                 "surface_form": "を",
                 "pos": "助詞",
                 "pos_detail_1": "格助詞",
@@ -99,82 +94,47 @@ module.exports = [
         ]
     },
     {
-        message: `「$1$2$3」には助詞の連続があります（格助詞から係助詞への連続）`,
-        expected: '$1$2',
+        message: `「$2」と「$3」の助詞の連続はタイプミスの可能性があります（格助詞の連続） err6`,
+        //私がが小説を読む。
+        expected: '$2',
         tokens: [
             {
-                "pos": "名詞",
-                "_capture": "$1"
-            },{
-                "surface_form": "を",
-                "pos": "助詞",
-                "pos_detail_1": "格助詞",
+                "pos": '助詞',
+                "pos_detail_1": '格助詞',
+                "pos_detail_2": '一般',
                 "_capture": "$2"
-            },{
-                "surface_form": "さえ",
-                "pos": "助詞",
-                "pos_detail_1": "係助詞",
-                "_capture": "$3"
-            }
-        ]
-    },
-    {
-        message: `「がが」はタイプミスの疑いがあります`,
-        tokens: [
-            {
-                "surface_form": "が",
-                "pos": "助詞",
-                "pos_detail_1": "格助詞",
             },
             {
-                "surface_form": "が",
-                "pos": "接続詞",
+                "pos": '助詞',
+                "pos_detail_1": '格助詞',
+                "pos_detail_2": '一般',
+                "_capture": "$3"
             },
-         
         ]
     },
+    //格助詞　連体化
     {
-        message: `「$1$2$3」には助詞の連続があります（格助詞と格助詞の連続）`,
-        //組織票にに支えられて
-        expected: '$1$2',
+        message: `「$2」と「$3」の助詞の連続はタイプミスの可能性があります（連体化した助詞の連続） err7`,
+        //彼のの発言を聞く
+        expected: '$2',
         tokens: [
             {
-                "_capture": "$1"
-            },{
-                "pos": "助詞",
-                "pos_detail_1": "格助詞",
-                "pos_detail_2": "一般",
+                "pos": '助詞',
+                "pos_detail_1": '連体化',
+                "pos_detail_2": '*',
                 "_capture": "$2"
-            },{
-                "pos": "助詞",
-                "pos_detail_1": "格助詞",
-                "pos_detail_2": "一般",
-                "_capture": "$3"
-            }
-        ]
-    },
-    {
-        message: `「$1$2$3」には助詞の連続があります（格助詞と格助詞の連続）`,
-        //海発のの発言
-        expected: '$1$2',
-        tokens: [
+            },
             {
-                "_capture": "$1"
-            },{
-                "surface_form": 'の',
-                "pos": "助詞",
-                "pos_detail_1": "連体化",
-                "_capture": "$2"
-            },{
-                "surface_form": 'の',
-                "pos": "助詞",
-                "pos_detail_1": "連体化",
+                "pos": '助詞',
+                "pos_detail_1": '連体化',
+                "pos_detail_2": '*',
                 "_capture": "$3"
-            }
+            },
         ]
     },
+    //格助詞＋連体化で不自然なもの
     {
-        message: `「$1をの」には不自然な助詞の連続があります`,
+        message: `「$1をの」には不自然な助詞の連続があります（格助詞＋連体化） err8`,
         //新型コロナウイルスのためをの
         expected: '$1$をの',
         tokens: [
@@ -194,7 +154,7 @@ module.exports = [
         ]
     },
     {
-        message: `「$1にの」には不自然な助詞の連続があります`,
+        message: `「$1にの」には不自然な助詞の連続があります err9`,
         //新型コロナウイルスのためにの
         expected: '$1$にの',
         tokens: [
@@ -213,9 +173,8 @@ module.exports = [
             }
         ]
     },
-                    
     {
-        message: `「$1よりの」には不自然な助詞の連続があります`,
+        message: `「$1よりの」には不自然な助詞の連続があります err10`,
         //新型コロナウイルスのためよりの
         expected: '$1$よりの',
         tokens: [
@@ -233,27 +192,28 @@ module.exports = [
                 "_capture": "$3"
             }
         ]
-    },    {
-        message: `「$1やの」には不自然な助詞の連続があります`,
-        //新型コロナウイルスのためにの
-        expected: '$1$やの',
+    },
+    //並立助詞の後の助詞
+    {
+        message: `「$1や$3」には並立助詞の後に助詞が続いています err 11`,
+        //新型コロナウイルスのためやの
+        expected: '$1やの',
         tokens: [
             {
                 "_capture": "$1"
             },{
                 "surface_form": 'や',
                 "pos": "助詞",
-                "pos_detail_1": "格助詞",
+                "pos_detail_1": "並立助詞",
                 "_capture": "$2"
             },{
-                "surface_form": 'の',
                 "pos": '助詞',
-                "pos_detail_1": '連体化',
                 "_capture": "$3"
             }
         ]
     },
-    
+
+    //以下、リファクタリング前
     {
         message: '「~た~た」と続いています',
         tokens: [
