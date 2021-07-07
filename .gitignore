@@ -2,3 +2,5 @@ node_modules/
 out/
 test/mytext.txt
 out.txt
+longtext.txt
+.DS_Store

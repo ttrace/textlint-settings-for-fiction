@@ -214,43 +214,45 @@ module.exports = [
     },
 
     //以下、リファクタリング前
-    {
-        message: '「~た~た」と続いています',
-        tokens: [
-            {
-                "pos": "動詞",
-                "conjugated_form": "連用形",
-            },{
-                "surface_form": "た",
-                "pos": "助動詞",
-                "conjugated_form": "基本形",
-            },{
-                "pos": "動詞",
-                "conjugated_form": "連用形",
-            },{
-                "surface_form": "た",
-                "pos": "助動詞",
-            }
-        ]
-    },
     //接続詞の連続（タイプミス）
     //例）聞いたのでで
     {
-        message: '接続詞が二つ続いています（接続助詞と接続詞）',
+        message: '「$1」と「$2」で接続詞が続いています（接続助詞と接続詞） err12',
+        //話を聞いたのでで僕は行くことにした。
         tokens: [
             {
                 "pos_detail_1": "接続助詞",
+                "_capture": "$1",
             },{
+                "surface_form": "で",
                 "pos": "接続詞",
+                "_capture": "$2",
             }
         ]
     },
     {
-        message: '「~れ。」で終わっています。~れる。~れた。などと続く可能性があります',
+        message: '「$1」と「$2」接続詞が二つ続いています（接続助詞と接続詞） err13',
+        //話を聞いたのでで、行くことにした。
+        tokens: [
+            {
+                "pos_detail_1": "接続助詞",
+                "_capture": "$1",
+            },{
+                "surface_form": "で",
+                "pos": "助動詞",
+                "_capture": "$2",
+            }
+        ]
+    },
+    {
+        message: '「$1$2。」で終わっています。~れる。~れた。などと続く可能性があります err14',
+        //その本は読まれ。
+        expected: '$1$2た',
         tokens: [
             {
                 "pos": "動詞",
                 "conjugated_form": "未然形",
+                "_capture": "$1",
             },
             {
                 "surface_form": "れ",
@@ -258,6 +260,7 @@ module.exports = [
                 "pos_detail_1": "接尾",
                 "conjugated_form": "連用形",
                 "basic_form": "れる",
+                "_capture": "$2",
             },
             {
                 "surface_form": "。",
