@@ -94,25 +94,6 @@ module.exports = [
         ]
     },
     {
-        message: `「$2」と「$3」の助詞の連続はタイプミスの可能性があります（格助詞の連続） err6`,
-        //私がが小説を読む。
-        expected: '$2',
-        tokens: [
-            {
-                "pos": '助詞',
-                "pos_detail_1": '格助詞',
-                "pos_detail_2": '一般',
-                "_capture": "$2"
-            },
-            {
-                "pos": '助詞',
-                "pos_detail_1": '格助詞',
-                "pos_detail_2": '一般',
-                "_capture": "$3"
-            },
-        ]
-    },
-    {
         message: `「を」と「$3」の助詞の連続はタイプミスの可能性があります（格助詞の連続） err6-1`,
         //私をが小説を読む。
         expected: 'を',
