@@ -112,6 +112,139 @@ module.exports = [
             },
         ]
     },
+    {
+        message: `「を」と「$3」の助詞の連続はタイプミスの可能性があります（格助詞の連続） err6-1`,
+        //私をが小説を読む。
+        expected: 'を',
+        tokens: [
+            {
+                "surface_form": 'を',
+                "pos": '助詞',
+                "pos_detail_1": '格助詞',
+                "pos_detail_2": '一般',
+            },
+            {
+                "pos": '助詞',
+                "pos_detail_1": '格助詞',
+                "pos_detail_2": '一般',
+                "_capture": "$3"
+            },
+        ]
+    },
+    {
+        message: `「で」と「$3」の助詞の連続はタイプミスの可能性があります（格助詞の連続） err6-2`,
+        //私がが小説を読む。
+        expected: 'で',
+        tokens: [
+            {
+                "surface_form": 'で',
+                "pos": '助詞',
+                "pos_detail_1": '格助詞',
+                "pos_detail_2": '一般'
+            },
+            {
+                "pos": '助詞',
+                "pos_detail_1": '格助詞',
+                "pos_detail_2": '一般',
+                "_capture": "$3"
+            },
+        ]
+    },
+    {
+        message: `「と」と「$3」の助詞の連続はタイプミスの可能性があります（格助詞の連続） err6-3`,
+        //私とが小説を読む。
+        expected: 'と',
+        tokens: [
+            {
+                "surface_form": 'と',
+                "pos": '助詞',
+                "pos_detail_1": '格助詞',
+                "pos_detail_2": '一般',
+            },
+            {
+                "pos": '助詞',
+                "pos_detail_1": '格助詞',
+                "pos_detail_2": '一般',
+                "_capture": "$3"
+            },
+        ]
+    },
+    {
+        message: `「に」と「$3」の助詞の連続はタイプミスの可能性があります（格助詞の連続） err6-4`,
+        //私にが小説を読む。
+        expected: 'に',
+        tokens: [
+            {
+                "surface_form": 'に',
+                "pos": '助詞',
+                "pos_detail_1": '格助詞',
+                "pos_detail_2": '一般'
+            },
+            {
+                "pos": '助詞',
+                "pos_detail_1": '格助詞',
+                "pos_detail_2": '一般',
+                "_capture": "$3"
+            },
+        ]
+    },
+    {
+        message: `「が」と「$3」の助詞の連続はタイプミスの可能性があります（格助詞の連続） err6-5`,
+        //私がが小説を読む。
+        expected: 'が',
+        tokens: [
+            {
+                "surface_form": 'が',
+                "pos": '助詞',
+                "pos_detail_1": '格助詞',
+                "pos_detail_2": '一般'
+            },
+            {
+                "pos": '助詞',
+                "pos_detail_1": '格助詞',
+                "pos_detail_2": '一般',
+                "_capture": "$3"
+            },
+        ]
+    },
+    {
+        message: `「へ」と「$3」の助詞の連続はタイプミスの可能性があります（格助詞の連続） err6-7`,
+        //私へが小説を読む。
+        expected: 'へ',
+        tokens: [
+            {
+                "surface_form": 'へ',
+                "pos": '助詞',
+                "pos_detail_1": '格助詞',
+                "pos_detail_2": '一般'
+            },
+            {
+                "pos": '助詞',
+                "pos_detail_1": '格助詞',
+                "pos_detail_2": '一般',
+                "_capture": "$3"
+            },
+        ]
+    },
+    {
+        message: `「より」と「$3」の助詞の連続はタイプミスの可能性があります（格助詞の連続） err6-8`,
+        //私よりが小説を読む。
+        expected: 'より',
+        tokens: [
+            {
+                "surface_form": 'より',
+                "pos": '助詞',
+                "pos_detail_1": '格助詞',
+                "pos_detail_2": '一般',
+            },
+            {
+                "pos": '助詞',
+                "pos_detail_1": '格助詞',
+                "pos_detail_2": '一般',
+                "_capture": "$3"
+            },
+        ]
+    },
     //格助詞　連体化
     {
         message: `「$2」と「$3」の助詞の連続はタイプミスの可能性があります（連体化した助詞の連続） err7`,
