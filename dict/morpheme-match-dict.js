@@ -94,15 +94,129 @@ module.exports = [
         ]
     },
     {
-        message: `「$2」と「$3」の助詞の連続はタイプミスの可能性があります（格助詞の連続） err6`,
-        //私がが小説を読む。
-        expected: '$2',
+        message: `「を」と「$3」の助詞の連続はタイプミスの可能性があります（格助詞の連続） err6-1`,
+        //私をが小説を読む。
+        expected: 'を',
         tokens: [
+            {
+                "surface_form": 'を',
+                "pos": '助詞',
+                "pos_detail_1": '格助詞',
+                "pos_detail_2": '一般',
+            },
             {
                 "pos": '助詞',
                 "pos_detail_1": '格助詞',
                 "pos_detail_2": '一般',
-                "_capture": "$2"
+                "_capture": "$3"
+            },
+        ]
+    },
+    {
+        message: `「で」と「$3」の助詞の連続はタイプミスの可能性があります（格助詞の連続） err6-2`,
+        //私がが小説を読む。
+        expected: 'で',
+        tokens: [
+            {
+                "surface_form": 'で',
+                "pos": '助詞',
+                "pos_detail_1": '格助詞',
+                "pos_detail_2": '一般'
+            },
+            {
+                "pos": '助詞',
+                "pos_detail_1": '格助詞',
+                "pos_detail_2": '一般',
+                "_capture": "$3"
+            },
+        ]
+    },
+    {
+        message: `「と」と「$3」の助詞の連続はタイプミスの可能性があります（格助詞の連続） err6-3`,
+        //私とが小説を読む。
+        expected: 'と',
+        tokens: [
+            {
+                "surface_form": 'と',
+                "pos": '助詞',
+                "pos_detail_1": '格助詞',
+                "pos_detail_2": '一般',
+            },
+            {
+                "pos": '助詞',
+                "pos_detail_1": '格助詞',
+                "pos_detail_2": '一般',
+                "_capture": "$3"
+            },
+        ]
+    },
+    {
+        message: `「に」と「$3」の助詞の連続はタイプミスの可能性があります（格助詞の連続） err6-4`,
+        //私にが小説を読む。
+        expected: 'に',
+        tokens: [
+            {
+                "surface_form": 'に',
+                "pos": '助詞',
+                "pos_detail_1": '格助詞',
+                "pos_detail_2": '一般'
+            },
+            {
+                "pos": '助詞',
+                "pos_detail_1": '格助詞',
+                "pos_detail_2": '一般',
+                "_capture": "$3"
+            },
+        ]
+    },
+    {
+        message: `「が」と「$3」の助詞の連続はタイプミスの可能性があります（格助詞の連続） err6-5`,
+        //私がが小説を読む。
+        expected: 'が',
+        tokens: [
+            {
+                "surface_form": 'が',
+                "pos": '助詞',
+                "pos_detail_1": '格助詞',
+                "pos_detail_2": '一般'
+            },
+            {
+                "pos": '助詞',
+                "pos_detail_1": '格助詞',
+                "pos_detail_2": '一般',
+                "_capture": "$3"
+            },
+        ]
+    },
+    {
+        message: `「へ」と「$3」の助詞の連続はタイプミスの可能性があります（格助詞の連続） err6-7`,
+        //私へが小説を読む。
+        expected: 'へ',
+        tokens: [
+            {
+                "surface_form": 'へ',
+                "pos": '助詞',
+                "pos_detail_1": '格助詞',
+                "pos_detail_2": '一般'
+            },
+            {
+                "pos": '助詞',
+                "pos_detail_1": '格助詞',
+                "pos_detail_2": '一般',
+                "_capture": "$3"
+            },
+        ]
+    },
+    {
+        message: `「より」と「$3」の助詞の連続はタイプミスの可能性があります（格助詞の連続） err6-8`,
+        //私よりが小説を読む。
+        expected: 'より',
+        tokens: [
+            {
+                "surface_form": 'より',
+                "pos": '助詞',
+                "pos_detail_1": '格助詞',
+                "pos_detail_2": '一般',
             },
             {
                 "pos": '助詞',
@@ -214,43 +328,45 @@ module.exports = [
     },
 
     //以下、リファクタリング前
-    {
-        message: '「~た~た」と続いています',
-        tokens: [
-            {
-                "pos": "動詞",
-                "conjugated_form": "連用形",
-            },{
-                "surface_form": "た",
-                "pos": "助動詞",
-                "conjugated_form": "基本形",
-            },{
-                "pos": "動詞",
-                "conjugated_form": "連用形",
-            },{
-                "surface_form": "た",
-                "pos": "助動詞",
-            }
-        ]
-    },
     //接続詞の連続（タイプミス）
     //例）聞いたのでで
     {
-        message: '接続詞が二つ続いています（接続助詞と接続詞）',
+        message: '「$1」と「$2」で接続詞が続いています（接続助詞と接続詞） err12',
+        //話を聞いたのでで僕は行くことにした。
         tokens: [
             {
                 "pos_detail_1": "接続助詞",
+                "_capture": "$1",
             },{
+                "surface_form": "で",
                 "pos": "接続詞",
+                "_capture": "$2",
             }
         ]
     },
     {
-        message: '「~れ。」で終わっています。~れる。~れた。などと続く可能性があります',
+        message: '「$1」と「$2」接続詞が二つ続いています（接続助詞と接続詞） err13',
+        //話を聞いたのでで、行くことにした。
+        tokens: [
+            {
+                "pos_detail_1": "接続助詞",
+                "_capture": "$1",
+            },{
+                "surface_form": "で",
+                "pos": "助動詞",
+                "_capture": "$2",
+            }
+        ]
+    },
+    {
+        message: '「$1$2。」で終わっています。~れる。~れた。などと続く可能性があります err14',
+        //その本は読まれ。
+        expected: '$1$2た',
         tokens: [
             {
                 "pos": "動詞",
                 "conjugated_form": "未然形",
+                "_capture": "$1",
             },
             {
                 "surface_form": "れ",
@@ -258,6 +374,7 @@ module.exports = [
                 "pos_detail_1": "接尾",
                 "conjugated_form": "連用形",
                 "basic_form": "れる",
+                "_capture": "$2",
             },
             {
                 "surface_form": "。",

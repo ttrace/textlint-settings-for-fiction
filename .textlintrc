@@ -23,6 +23,10 @@
                 "コロナ","コロナウイルス",
                 "ネット","ネットワーク"
                 ]
+        },        "general-novel-style-ja": {
+            "chars_leading_paragraph": false,
+            // アラビア数字の桁数は2桁まで (false: チェックしない)
+            "max_arabic_numeral_digits": 4
         }
     }
 }

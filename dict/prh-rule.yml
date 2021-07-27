@@ -53,10 +53,7 @@ rules:
         to:   foo altJS bar
 
   # 漢字の開き
-  - expected: いえ
-    pattern: /(?=は)言え/
-  - expected: いわ
-    pattern: /(?<!有無を)言わ/
+  # 「言う」には何かのルールを考えたいね。
   - expected: すが$1
     pattern: /縋([らりるれろ])/
 
