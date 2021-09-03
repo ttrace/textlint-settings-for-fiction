@@ -359,7 +359,21 @@ module.exports = [
         ]
     },
     {
-        message: '「$1$2。」で終わっています。~れる。~れた。などと続く可能性があります err14',
+        message: '「$1」と「$2」接続詞が二つ続いています（接続助詞と格助詞） err13-2',
+        //話を聞いたのでで、行くことにした。
+        tokens: [
+            {
+                "pos_detail_1": "接続助詞",
+                "_capture": "$1",
+            },{
+                "pos_detail_1": "格助詞",
+                "pos_detail_2": "引用",
+                "_capture": "$2",
+            }
+        ]
+    },
+    {
+        message: '「$1$2。」で文章が終わっています。~れる。~れた。などと続く可能性があります err14',
         //その本は読まれ。
         expected: '$1$2た',
         tokens: [
@@ -383,11 +397,25 @@ module.exports = [
         ]
     },
     {
-        message: '連用形の動詞で文が終わっています。~た。~ていた。などと続く可能性があります',
+        message: '連用形の動詞「$1」で文が終わっています。「$1ました」の誤記の可能性があります err15',
         tokens: [
             {
                 "pos": "動詞",
+                "pos_detail_1": '自立',
                 "conjugated_form": "連用形",
+                "_capture": "$1",
+            },
+            {
+                "surface_form": "。",
+            }
+        ]
+    },
+    {
+        message: '連用形の「$1」で文が終わっています。「$1た」の誤記の可能性があります err16',
+        tokens: [
+            {
+                "conjugated_form": "連用タ接続",
+                "_capture": "$1",
             },
             {
                 "surface_form": "。",
