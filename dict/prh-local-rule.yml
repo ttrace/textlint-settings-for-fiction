@@ -4,3 +4,4 @@ rules:
 
   - expected: サーバー
     pattern: /サーバ(?!ー)/
+

@@ -10,6 +10,9 @@
     "novel",
     "writing"
   ],
+  "scripts":{
+    "unit":"node test/index.js"
+  },
   "author": "Taiyo Fujii",
   "license": "MIT",
   "devDependencies": {

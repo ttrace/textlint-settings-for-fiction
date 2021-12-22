@@ -78,3 +78,6 @@ rules:
   - expected: なかった
     pattern: な買った
     prh: 誤変換の可能性があります
+  - expected: る。
+    pattern: 流。
+    prh: 誤変換の可能性があります

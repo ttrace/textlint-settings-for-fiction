@@ -359,7 +359,143 @@ module.exports = [
         ]
     },
     {
-        message: '「$1$2。」で終わっています。~れる。~れた。などと続く可能性があります err14',
+        message: '「$1」と「$2」接続詞が二つ続いています（接続助詞と格助詞） err13-2',
+        //話を聞いたのでが、行くことにした。
+        tokens: [
+            {
+                "pos_detail_1": "接続助詞",
+                "_capture": "$1",
+            },{
+                "surface_form": "が",
+                "pos_detail_1": "格助詞",
+                "pos_detail_2": "一般",
+                "_capture": "$2",
+            }
+        ]
+    },    {
+        message: '「$1」と「$2」接続詞が二つ続いています（接続助詞と格助詞） err13-2',
+        //話を聞いたのでの、行くことにした。
+        tokens: [
+            {
+                "pos_detail_1": "接続助詞",
+                "_capture": "$1",
+            },{
+                "surface_form": "の",
+                "pos_detail_1": "格助詞",
+                "pos_detail_2": "一般",
+                "_capture": "$2",
+            }
+        ]
+    },
+    {
+        message: '「$1」と「$2」接続詞が二つ続いています（接続助詞と格助詞） err13-2',
+        //話を聞いたのでを、行くことにした。
+        tokens: [
+            {
+                "pos_detail_1": "接続助詞",
+                "_capture": "$1",
+            },{
+                "surface_form": "を",
+                "pos_detail_1": "格助詞",
+                "pos_detail_2": "一般",
+                "_capture": "$2",
+            }
+        ]
+    },
+    {
+        message: '「$1」と「$2」接続詞が二つ続いています（接続助詞と格助詞） err13-2',
+        //話を聞いたのでへ、行くことにした。
+        tokens: [
+            {
+                "pos_detail_1": "接続助詞",
+                "_capture": "$1",
+            },{
+                "surface_form": "へ",
+                "pos_detail_1": "格助詞",
+                "pos_detail_2": "一般",
+                "_capture": "$2",
+            }
+        ]
+    },
+    {
+        message: '「$1」と「$2」接続詞が二つ続いています（接続助詞と格助詞） err13-2',
+        //話を聞いたのでが、行くことにした。
+        tokens: [
+            {
+                "pos_detail_1": "接続助詞",
+                "_capture": "$1",
+            },{
+                "surface_form": "で",
+                "pos_detail_1": "格助詞",
+                "pos_detail_2": "一般",
+                "_capture": "$2",
+            }
+        ]
+    },
+    {
+        message: '「$1」と「$2」接続詞が二つ続いています（接続助詞と格助詞） err13-2',
+        //話を聞いたのでが、行くことにした。
+        tokens: [
+            {
+                "pos_detail_1": "接続助詞",
+                "_capture": "$1",
+            },{
+                "surface_form": "や",
+                "pos_detail_1": "格助詞",
+                "pos_detail_2": "一般",
+                "_capture": "$2",
+            }
+        ]
+    },
+    {
+        message: '「$1$2$3」に不自然な助詞の連続があります（係助詞から格助詞、そして係助詞）、 err13-3',
+        //造作はに拘っていない。
+        tokens: [
+            {
+                "pos_detail_1": "係助詞",
+                "_capture": "$1",
+            },{
+                "pos_detail_1": "格助詞",
+                "pos_detail_2": "一般",
+                "_capture": "$2",
+            },{
+                "pos_detail_1": "係助詞",
+                "_capture": "$3",
+            }
+        ]
+    },
+    {
+        message: '「$1」と「$2」不自然な助詞の連続があります（副詞化の助詞から格助詞） err13-4',
+        //物語は緊密にに構成されている。
+        tokens: [
+            {
+                "pos": "助詞",
+                "pos_detail_1": "副詞化",
+                "_capture": "$1",
+            },{
+                "pos_detail_1": "格助詞",
+                "pos_detail_2": "一般",
+                "_capture": "$2",
+            }
+        ]
+    },
+    {
+        message: '「$1」と「$2」接続詞が二つ続いています（接続助詞と副詞化助詞） err13-5',
+        //話を聞いたのでに、行くことにした。
+        tokens: [
+            {
+                "pos_detail_1": "接続助詞",
+                "_capture": "$1",
+            },{
+                "surface_form": "に",
+                "pos": "助詞",
+                "pos_detail_1": "副詞化",
+                "_capture": "$2",
+            }
+        ]
+    },
+    {
+        message: '「$1$2。」で文章が終わっています。~れる。~れた。などと続く可能性があります err14',
         //その本は読まれ。
         expected: '$1$2た',
         tokens: [
@@ -383,17 +519,48 @@ module.exports = [
         ]
     },
     {
-        message: '連用形の動詞で文が終わっています。~た。~ていた。などと続く可能性があります',
+        message: '連用形の動詞「$1」で文が終わっています。「$1ました」の誤記の可能性があります err15',
         tokens: [
             {
                 "pos": "動詞",
+                "pos_detail_1": '自立',
                 "conjugated_form": "連用形",
+                "_capture": "$1",
             },
             {
                 "surface_form": "。",
             }
         ]
     },
+    {
+        message: '連用形の「$1」で文が終わっています。「$1た」の誤記の可能性があります err16',
+        tokens: [
+            {
+                "conjugated_form": "連用タ接続",
+                "_capture": "$1",
+            },
+            {
+                "surface_form": "。",
+            }
+        ]
+    },
+    {
+        message: '「$1」「$2」では、動詞の基本形に接続助詞「んで」が続いています。タイプミスではないでしょうか。 err17',
+        //敵が取り囲むんでいる。
+        tokens: [
+            {
+                "pos": "動詞",
+                "conjugated_form": "基本形",
+                "_capture": "$1",
+            },
+            {
+                "surface_form": "んで",
+                "pos_detail_1": "接続助詞",
+                "_capture": "$2",
+            }
+        ]
+    },
+    
     //助動詞が続いています
     //「どきりとしたた」
     {
