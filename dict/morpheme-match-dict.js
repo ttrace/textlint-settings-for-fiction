@@ -360,20 +360,95 @@ module.exports = [
     },
     {
         message: '「$1」と「$2」接続詞が二つ続いています（接続助詞と格助詞） err13-2',
-        //話を聞いたのでで、行くことにした。
+        //話を聞いたのでが、行くことにした。
         tokens: [
             {
                 "pos_detail_1": "接続助詞",
                 "_capture": "$1",
             },{
+                "surface_form": "が",
                 "pos_detail_1": "格助詞",
-                "pos_detail_2": "引用",
+                "pos_detail_2": "一般",
+                "_capture": "$2",
+            }
+        ]
+    },    {
+        message: '「$1」と「$2」接続詞が二つ続いています（接続助詞と格助詞） err13-2',
+        //話を聞いたのでの、行くことにした。
+        tokens: [
+            {
+                "pos_detail_1": "接続助詞",
+                "_capture": "$1",
+            },{
+                "surface_form": "の",
+                "pos_detail_1": "格助詞",
+                "pos_detail_2": "一般",
                 "_capture": "$2",
             }
         ]
     },
     {
-        message: '「$1」と「$2」不自然な助詞の連続があります（係助詞から格助詞） err13-3',
+        message: '「$1」と「$2」接続詞が二つ続いています（接続助詞と格助詞） err13-2',
+        //話を聞いたのでを、行くことにした。
+        tokens: [
+            {
+                "pos_detail_1": "接続助詞",
+                "_capture": "$1",
+            },{
+                "surface_form": "を",
+                "pos_detail_1": "格助詞",
+                "pos_detail_2": "一般",
+                "_capture": "$2",
+            }
+        ]
+    },
+    {
+        message: '「$1」と「$2」接続詞が二つ続いています（接続助詞と格助詞） err13-2',
+        //話を聞いたのでへ、行くことにした。
+        tokens: [
+            {
+                "pos_detail_1": "接続助詞",
+                "_capture": "$1",
+            },{
+                "surface_form": "へ",
+                "pos_detail_1": "格助詞",
+                "pos_detail_2": "一般",
+                "_capture": "$2",
+            }
+        ]
+    },
+    {
+        message: '「$1」と「$2」接続詞が二つ続いています（接続助詞と格助詞） err13-2',
+        //話を聞いたのでが、行くことにした。
+        tokens: [
+            {
+                "pos_detail_1": "接続助詞",
+                "_capture": "$1",
+            },{
+                "surface_form": "で",
+                "pos_detail_1": "格助詞",
+                "pos_detail_2": "一般",
+                "_capture": "$2",
+            }
+        ]
+    },
+    {
+        message: '「$1」と「$2」接続詞が二つ続いています（接続助詞と格助詞） err13-2',
+        //話を聞いたのでが、行くことにした。
+        tokens: [
+            {
+                "pos_detail_1": "接続助詞",
+                "_capture": "$1",
+            },{
+                "surface_form": "や",
+                "pos_detail_1": "格助詞",
+                "pos_detail_2": "一般",
+                "_capture": "$2",
+            }
+        ]
+    },
+    {
+        message: '「$1$2$3」に不自然な助詞の連続があります（係助詞から格助詞、そして係助詞）、 err13-3',
         //造作はに拘っていない。
         tokens: [
             {
@@ -383,6 +458,9 @@ module.exports = [
                 "pos_detail_1": "格助詞",
                 "pos_detail_2": "一般",
                 "_capture": "$2",
+            },{
+                "pos_detail_1": "係助詞",
+                "_capture": "$3",
             }
         ]
     },
@@ -397,6 +475,21 @@ module.exports = [
             },{
                 "pos_detail_1": "格助詞",
                 "pos_detail_2": "一般",
+                "_capture": "$2",
+            }
+        ]
+    },
+    {
+        message: '「$1」と「$2」接続詞が二つ続いています（接続助詞と副詞化助詞） err13-5',
+        //話を聞いたのでに、行くことにした。
+        tokens: [
+            {
+                "pos_detail_1": "接続助詞",
+                "_capture": "$1",
+            },{
+                "surface_form": "に",
+                "pos": "助詞",
+                "pos_detail_1": "副詞化",
                 "_capture": "$2",
             }
         ]
@@ -451,6 +544,23 @@ module.exports = [
             }
         ]
     },
+    {
+        message: '「$1」「$2」では、動詞の基本形に接続助詞「んで」が続いています。タイプミスではないでしょうか。 err17',
+        //敵が取り囲むんでいる。
+        tokens: [
+            {
+                "pos": "動詞",
+                "conjugated_form": "基本形",
+                "_capture": "$1",
+            },
+            {
+                "surface_form": "んで",
+                "pos_detail_1": "接続助詞",
+                "_capture": "$2",
+            }
+        ]
+    },
+    
     //助動詞が続いています
     //「どきりとしたた」
     {
