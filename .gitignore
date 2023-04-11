@@ -4,3 +4,4 @@ test/mytext.txt
 out.txt
 longtext.txt
 .DS_Store
+package-lock.json
