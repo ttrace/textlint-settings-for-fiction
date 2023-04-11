@@ -69,8 +69,8 @@ rules:
   - expected: かぶりを振
     pattern: 被りを振
     prh: 頭を振る、または、かぶりを振るが正しい表記です
-  - expected: 我に返る
-    pattern: 我に帰る
+  - expected: 我に返$1
+    pattern: /我に帰([っる])/
     prh: 誤変換の可能性があります
   - expected: 口をきく
     pattern: 口を聞く
