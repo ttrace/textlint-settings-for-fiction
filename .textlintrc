@@ -16,18 +16,8 @@
             "2.1.8.算用数字": false,
             "2.2.2.算用数字と漢数字の使い分け": false
         },
-        "@textlint-ja/textlint-rule-no-synonyms": {
-            "allows": [
-                "ハロワ","ハローワーク",
-                "だし","出し",
-                "コロナ","コロナウイルス",
-                "ネット","ネットワーク",
-                "足","脚"
-                ]
-        },
         "general-novel-style-ja": {
             "chars_leading_paragraph": false,
-            // アラビア数字の桁数は2桁まで (false: チェックしない)
             "max_arabic_numeral_digits": 4
         }
     }

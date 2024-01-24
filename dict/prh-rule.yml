@@ -81,3 +81,25 @@ rules:
   - expected: る。
     pattern: 流。
     prh: 誤変換の可能性があります
+  - expected: ると$1
+    patterns: /ルト([、。])/
+    prh: 誤変換の可能性があります
+  - expected: 念じた
+    patterns: 年じた
+    prh: 誤変換の可能性があります
+
+ # 用語
+  - expected: 陽射し
+    patterns: (日差|日射|陽差)し
+  - expected: ダイヤモンド
+    patterns: ダイアモンド
+  - expected: シミュレーション
+    patterns: シュミレーション
+  - expected: アボカド
+    patterns: 
+      - アボガド
+      - アボガト
+      - アボカト
+  - expected: 目を剥$1
+    patterns: /目を向(く|いた)/
+    prh: 「目を剥く」の誤入力の可能性があります
